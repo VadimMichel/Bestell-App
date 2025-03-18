@@ -1,0 +1,17 @@
+.p-l-r-60{
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+*{
+    font-family: "Roboto";
+}
+
+.p-t-b-32{
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.color-orange{
+    color: rgb(252, 171, 114);
+}
