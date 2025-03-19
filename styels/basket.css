@@ -1,0 +1,55 @@
+.busket-stickyrail{
+    width: 300px;
+    border: 2px solid rgb(221, 221, 221);
+}
+
+.busket-stickyrail h2{
+    z-index:+1;
+    position: sticky;
+    top: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid rgb(221, 221, 221);
+    text-align: center;
+}
+
+.content-restaurant{
+    flex:2;
+}
+
+#busketCourseContent{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#busketCourseContent h3{
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-align: center;
+}
+
+#busketCourseContent img{
+    width: 16px;
+    height: 16px;
+}
+
+.trash-image-container{
+   padding: 8px;
+   border: 3px solid transparent;
+   display: flex;
+}
+
+.trash-image-container:hover{
+    outline: 0px solid transparent;
+    border:3px solid rgb(255,128,0);
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.busked-course-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}

@@ -84,10 +84,6 @@ header{
     justify-content: center;
 }
 
-.add-button:hover{
-    cursor: pointer;
-}
-
 .main-course div{
     display: flex;
     flex-direction: column;
@@ -97,29 +93,15 @@ header{
     padding-bottom: 8px;
 }
 
+.main-course:hover{
+    background-color: rgb(254,229,203);
+    cursor: pointer;
+}
+
 h2{
     padding-bottom: 8px;
 }
 
 .content-total{
     display: flex;  
-}
-
-.busket-stickyrail{
-    width: 300px;
-    border: 2px solid rgb(221, 221, 221);
-}
-
-.busket-stickyrail h2{
-    z-index:+1;
-    position: sticky;
-    top: 0;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    border-bottom: 2px solid rgb(221, 221, 221);
-    text-align: center;
-}
-
-.content-restaurant{
-    flex:2;
 }
