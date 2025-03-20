@@ -20,6 +20,9 @@
 #busketCourseContent{
     padding-left: 16px;
     padding-right: 16px;
+    z-index:+1;
+    position: sticky;
+    top: 64px;
 }
 
 #busketCourseContent h3{
@@ -29,14 +32,17 @@
 }
 
 #busketCourseContent img{
-    width: 16px;
+    width: 10px;
     height: 16px;
 }
 
 .trash-image-container{
-   padding: 8px;
+   width: 32px;
+   height: 32px;
    border: 3px solid transparent;
    display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .trash-image-container:hover{
@@ -52,4 +58,15 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+}
+
+.busket-stickyrail table{
+    margin-top: 32px;
+    border-top: 2px solid rgb(221, 221, 221);
+    width: 100%;
+    padding: 16px;
+}
+
+.busket-stickyrail td{
+    padding-top: 12px;
 }

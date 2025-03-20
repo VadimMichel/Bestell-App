@@ -35,3 +35,17 @@
     border-radius: 100%;
     cursor: pointer;
 }
+
+.d-none{
+    display: none;
+}
+
+.f-w-bold{
+    font-weight: bold;
+}
+
+.sticky-top{
+    z-index:+1;
+    position: sticky;
+    top:0;
+}

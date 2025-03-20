@@ -11,15 +11,40 @@ function renderCourse(){
     }
 }
 
-function renderCourseInBusked(indexCourse){
+function renderCourseInBusked(){
     let buskedCourseContentRef = document.getElementById("busketCourseContent");
-    let courseInBuskedContentRef = document.getElementById(`courseContent${indexCourse}`)
+    buskedCourseContentRef.innerHTML = "";
+   
+    
+    for (let buskedIndex = 0; buskedIndex < assortment.length; buskedIndex++) {
 
-    if(assortment[indexCourse].busked == 0){
-    assortment[indexCourse].busked += 1;
-    buskedCourseContentRef.innerHTML += getBuskedCourseTemplate(indexCourse);
-    }else{
-    assortment[indexCourse].busked += 1;
-    courseInBuskedContentRef.innerHTML = getBuskedCourseTemplate(indexCourse);
+        if(assortment[buskedIndex].busked > 0){
+        buskedCourseContentRef.innerHTML += getBuskedCourseTemplate(buskedIndex);
+        }
+    }
+    calcResult();
+}
+
+function changeBuskedAmount(indexCourse, amount){
+
+    assortment[indexCourse].busked = assortment[indexCourse].busked + amount;
+    renderCourseInBusked(indexCourse);
+}
+
+function deleteCouse(indexCourse){
+    assortment[indexCourse].busked = 0;
+    renderCourseInBusked(indexCourse);
+}
+
+function calcResult(){
+        let result = 0;
+        let calcResultContent = document.getElementById("calcResultContent");
+        calcResultContent.innerHTML = "";
+    for (let indexCalcResul = 0; indexCalcResul < assortment.length; indexCalcResul++) {
+        result += assortment[indexCalcResul].price * assortment[indexCalcResul].busked;
+
+        if(result != 0){
+        calcResultContent.innerHTML = getCalcResultTemplate(result);
+        }
     }
 }

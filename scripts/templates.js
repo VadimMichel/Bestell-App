@@ -1,6 +1,6 @@
 function getCourseTemplate(indexCourse){
     return `
-        <div onclick="renderCourseInBusked(${indexCourse})" class="main-course">
+        <div onclick="changeBuskedAmount(${indexCourse}, ${+1})" class="main-course">
             <div>
                 <h3>${assortment[indexCourse].name}</h3>
                 <p>${assortment[indexCourse].description}</p>
@@ -11,17 +11,36 @@ function getCourseTemplate(indexCourse){
     `
 }
 
-function getBuskedCourseTemplate(indexCourse){
+function getBuskedCourseTemplate(buskedIndex){
     return `
-        <div id="courseContent${indexCourse}">
-            <h3>${assortment[indexCourse].name}</h3>
+        <div id="courseContent${buskedIndex}">
+            <h3>${assortment[buskedIndex].name}</h3>
             <div class="busked-course-container">
-                <span class="bold-orange-hover">-</span>
-                <span id="busketCourseAmountContent">${assortment[indexCourse].busked}x</span>
-                <span class="bold-orange-hover">+</span>
-                <span id="busketCoursePriceContent">${assortment[0].price * assortment[indexCourse].busked}€</span>
-                <div class="trash-image-container"><img src="./assets/icons/trash.png" alt="Mülleimer"></div>
+                <span onclick="changeBuskedAmount(${buskedIndex}, ${-1})" class="bold-orange-hover">-</span>
+                <span id="busketCourseAmountContent">${assortment[buskedIndex].busked}x</span>
+                <span onclick="changeBuskedAmount(${buskedIndex}, ${+1})" class="bold-orange-hover">+</span>
+                <span id="busketCoursePriceContent">${(assortment[buskedIndex].price * assortment[buskedIndex].busked).toFixed(2).replace(".", ",")}€</span>
+                <div onclick="deleteCouse(${buskedIndex})" class="trash-image-container"><img src="./assets/icons/trash.png" alt="Mülleimer"></div>
             </div>
         </div>
+    `
+}
+
+function getCalcResultTemplate(result){
+    return `
+        <table>
+            <tr>
+                <td>Zwischensumme</td>
+                <td>${result.toFixed(2).replace(".", ",")}€</td>
+            </tr>
+            <tr>
+                <td>Lieferkosten</td>
+                <td>5,00€</td>
+            </tr>
+            <tr>
+                <td class="f-w-bold">Gesammt</td>
+                <td class="f-w-bold">${(result + 5).toFixed(2).replace(".", ",")}€</td>
+            </tr>
+        </table>
     `
 }
