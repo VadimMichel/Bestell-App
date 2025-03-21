@@ -1,5 +1,6 @@
 function init(){
     renderCourse();
+    
 }
 
 function renderCourse(){
@@ -17,7 +18,6 @@ function renderCourseInBusked(){
    
     
     for (let buskedIndex = 0; buskedIndex < assortment.length; buskedIndex++) {
-
         if(assortment[buskedIndex].busked > 0){
         buskedCourseContentRef.innerHTML += getBuskedCourseTemplate(buskedIndex);
         }
@@ -47,4 +47,28 @@ function calcResult(){
         calcResultContent.innerHTML = getCalcResultTemplate(result);
         }
     }
+}
+
+function closeWindow(){
+    document.getElementById('overlay').classList.add("d_none");
+}
+
+function insideBox(event){
+    event.stopPropagation();
+}
+
+function rateOrder(amount, classe, event){
+    for (let indexRateOrder = 0; indexRateOrder < amount; indexRateOrder++) {
+        
+        document.getElementById(`star${indexRateOrder+1}`).innerHTML = `<img class="star" src="./assets/icons/star${classe}.png" alt="star-empty">`
+    }
+    event.stopPropagation();
+}
+
+function submitOrder(){
+    document.getElementById('overlay').classList.remove("d_none");
+    for (let indexClear = 0; indexClear < assortment.length; indexClear++) {
+        assortment[indexClear].busked = 0;
+    }
+    renderCourseInBusked();
 }

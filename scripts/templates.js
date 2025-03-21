@@ -42,5 +42,6 @@ function getCalcResultTemplate(result){
                 <td class="f-w-bold">${(result + 5).toFixed(2).replace(".", ",")}€</td>
             </tr>
         </table>
+        <div onclick="submitOrder()" class="d-flex-j-center"><button class="btn">Bezahlen (${(result + 5).toFixed(2).replace(".", ",")}€)</button></div>
     `
 }

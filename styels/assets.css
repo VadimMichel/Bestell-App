@@ -51,9 +51,9 @@ header{
     height: 80px;
     width: 80px;
     border-radius: 300px;
-    position: absolute;
+    
     left: calc(50% - 190px);
-    top: 190px;
+    margin-top: -40px;
     border: 1px solid grey;
 }
 
@@ -106,3 +106,55 @@ h2{
     display: flex;  
 }
 
+.btn{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 28px;
+    padding-right: 28px;
+    margin-top: 40px;
+    border-radius: 12px;
+    background-color: rgb(252, 171, 114);
+    font-weight: bold;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(255,128,0);
+}
+
+#overlay-img-box{
+    background-color: white;
+    width: 384px;
+    height: 512px;
+    border-radius: 32px;
+    padding-bottom: 8px;
+    border: 2px solid grey;
+    text-align: center;
+}
+
+#overlay-img-box p{
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+}
+
+.star-container{
+    padding-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.star{
+    width: 40px;
+    height: 40px;
+}
+
+.star:hover{
+    cursor: pointer;
+}
+
+.single-star-container{
+    width: 40px;
+    height: 40px;
+}

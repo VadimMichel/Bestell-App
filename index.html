@@ -24,7 +24,7 @@
     <section class="content-total">
         <div class="content-restaurant">
             <img class="main-image" src="./assets/img/hero.jpg" alt="Pizza">
-            <img class="abolute-image" src="./assets/img/pizza-shop.png" alt="pizza shop">
+            <div class="d-flex-j-center"><img class="abolute-image" src="./assets/img/pizza-shop.png" alt="pizza shop"></div>
             <h1 class="p-l-r-60 p-t-b-32">Pizza Lieferdienst</h1>
             <p class="p-l-r-60 color-orange">Bewertung (4,2 von 5 Sternen)</p>
             <div class="navigation p-l-r-60">
@@ -43,6 +43,26 @@
             <h2>Warenkorb</h2>
             <div id="busketCourseContent"></div>
             <div id="calcResultContent"></div>
+            </div>
+        </div>
+        <div onclick="closeWindow()" id="overlay" class="overlay-style d_none">
+            <div onmouseover="rateOrder(5, `-empty`, '')" onclick="insideBox(event)" id="overlay-img-box">
+                <div class="bg-o"><img class="main-logo" src="./assets/img/Bestell App- Logo.svg" alt="Bestell App logo"></div>
+                <p><b>Ihre Bestellung ist bei uns eingegangen und befindet sich jetzt in bearbeitung!</b>
+                    <br>
+                    <br>
+                    <b>Ihre Meinung ist uns Wichtig!</b>
+                    <br>
+                    <br>
+                    Wir würden gerne wissen, wie zufrieden Sie mit Ihrer letzten Bestellung waren.
+                </p>
+                <div class="star-container">
+                    <div onmouseover="rateOrder(1, '', event)" id="star1"><img class="star" src="./assets/icons/star-empty.png" alt="star-empty"></div>
+                    <div onmouseover="rateOrder(2, '', event)" id="star2"><img class="star" src="./assets/icons/star-empty.png" alt="star-empty"></div>
+                    <div onmouseover="rateOrder(3, '', event)" id="star3"><img class="star" src="./assets/icons/star-empty.png" alt="star-empty"></div>
+                    <div onmouseover="rateOrder(4, '', event)" id="star4"><img class="star" src="./assets/icons/star-empty.png" alt="star-empty"></div>
+                    <div onmouseover="rateOrder(5, '', event)" id="star5"><img class="star" src="./assets/icons/star-empty.png" alt="star-empty"></div>
+                </div>
             </div>
         </div>
     </section>
