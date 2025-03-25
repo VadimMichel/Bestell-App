@@ -21,8 +21,9 @@
         <img class="main-logo" src="./assets/img/Bestell App- Logo.svg" alt="Bestell App logo">
         <img class="burger-menu-logo" src="./assets/img/burger-menu.png" alt="burger-menu">
     </header>
+    
     <section class="content-total">
-        <div class="content-restaurant">
+        <div id="contentRestaurant" class="content-restaurant">
             <img class="main-image" src="./assets/img/hero.jpg" alt="Pizza">
             <div class="d-flex-j-center"><img class="abolute-image" src="./assets/img/pizza-shop.png" alt="pizza shop"></div>
             <h1 class="p-l-r-60 p-t-b-32">Pizza Lieferdienst</h1>
@@ -35,19 +36,19 @@
             <img class="second-image" src="./assets/img/pizza-2nd-image.jpg" alt="Pizza">
             <h2 class="p-l-r-60">Hauptgerichte</h2>
             <div id="courseContent">
-                
             </div>
         </div>
-        <div class="busket-stickyrail">
+        <div id="busketStickyRail" class="busket-stickyrail d_none_responsive sticky-top">
             <div class="sticky-top">
-            <h2>Warenkorb</h2>
-            <div id="busketCourseContent"></div>
-            <div id="calcResultContent"></div>
+                <button onclick="toggleResponsiveBusked()" id="buttonTop" class="open-busket-button d_none_responsive d_none">Warenkorb schließen</button>
+                <h2>Warenkorb</h2>
+                <div id="busketCourseContent"></div>
+                <div id="calcResultContent"></div>
             </div>
         </div>
-        <div onclick="closeWindow()" id="overlay" class="overlay-style d_none">
-            <div onmouseover="rateOrder(5, `-empty`, '')" onclick="insideBox(event)" id="overlay-img-box">
-                <div class="bg-o"><img class="main-logo" src="./assets/img/Bestell App- Logo.svg" alt="Bestell App logo"></div>
+        <div onclick="closeWindow()" id="overlay" class="overlay-style d_none_allways">
+            <div onmouseover="rateOrder(5, `-empty`, event)" onclick="insideBox(event)" id="overlay-img-box">
+                <div class="bg-o"><img class="main-logo" src="./assets/img/Bestell App- Logo.svg" alt="Bestell App logo"> <span onclick="closeWindow()">x</span></div>
                 <p><b>Ihre Bestellung ist bei uns eingegangen und befindet sich jetzt in bearbeitung!</b>
                     <br>
                     <br>
@@ -64,7 +65,9 @@
                     <div onmouseover="rateOrder(5, '', event)" id="star5"><img class="star" src="./assets/icons/star-empty.png" alt="star-empty"></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </div> 
+        </section>
+        <button onclick="toggleResponsiveBusked()" id="buttonBottum" class="open-busket-button sticky-bottum d_none">Warenkorb öffnen<span id="buskedAmount"></span></button>
+        <footer></footer> 
 </body>
 </html>

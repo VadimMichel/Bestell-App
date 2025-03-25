@@ -36,10 +36,6 @@
     cursor: pointer;
 }
 
-.d-none{
-    display: none;
-}
-
 .f-w-bold{
     font-weight: bold;
 }
@@ -48,6 +44,12 @@
     z-index:+1;
     position: sticky;
     top:0;
+}
+
+.sticky-bottum{
+    z-index:+1;
+    position: sticky;
+    bottom:0;
 }
 
 .d-flex-j-center{
@@ -64,4 +66,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media(max-width: 660px){
+    .d_none_responsive{
+        display: none;
+    }
+}
+
+@media(min-width: 661px){
+    .d_none{
+        display: none;
+    }
 }

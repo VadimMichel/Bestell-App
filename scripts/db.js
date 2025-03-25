@@ -37,4 +37,7 @@ let assortment = [
     }
 ]
 
-let busketArray = [];
+let ratingArray = {
+    "stars" : 0,
+    "raitings" : 0
+};

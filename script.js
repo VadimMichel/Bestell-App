@@ -45,30 +45,52 @@ function calcResult(){
 
         if(result != 0){
         calcResultContent.innerHTML = getCalcResultTemplate(result);
+        renderBuskedButtonAmount(result);
         }
     }
 }
 
+function renderBuskedButtonAmount(result){
+    let buskedAmountRef = document.getElementById("buskedAmount");
+    buskedAmountRef.innerHTML = "";
+    buskedAmountRef.innerHTML = `(${(result + 5).toFixed(2).replace(".", ",")}€)`
+}
+
 function closeWindow(){
-    document.getElementById('overlay').classList.add("d_none");
+    document.getElementById('overlay').classList.add("d_none_allways");
 }
 
 function insideBox(event){
     event.stopPropagation();
 }
 
+function toggleResponsiveBusked(){
+    toggleDnone("buttonTop");
+    toggleDnone("buttonBottum");
+    toggleDnone("busketStickyRail");
+    toggleDnone("contentRestaurant");
+}
+
+function toggleDnone(id){
+    document.getElementById(id).classList.toggle("d_none_responsive");
+}
+
 function rateOrder(amount, classe, event){
     for (let indexRateOrder = 0; indexRateOrder < amount; indexRateOrder++) {
-        
-        document.getElementById(`star${indexRateOrder+1}`).innerHTML = `<img class="star" src="./assets/icons/star${classe}.png" alt="star-empty">`
+        document.getElementById(`star${indexRateOrder+1}`).innerHTML = `<div><img class="star" src="./assets/icons/star${classe}.png" alt="star-empty"></div>`
     }
     event.stopPropagation();
 }
 
 function submitOrder(){
-    document.getElementById('overlay').classList.remove("d_none");
+    document.getElementById('overlay').classList.remove("d_none_allways");
     for (let indexClear = 0; indexClear < assortment.length; indexClear++) {
         assortment[indexClear].busked = 0;
     }
     renderCourseInBusked();
+}
+
+function calcRating(indexRateOrder){
+    raitings.stars += raitings.stars + indexRateOrder;
+    ratingArray.raitings += 1;
 }
