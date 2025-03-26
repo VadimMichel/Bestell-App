@@ -1,59 +1,65 @@
 function init(){
-    renderCourse();
-    
+    renderCourse(assortment, "courseContent");
+    renderCourse(sideDish, "courseContentSideDish");
+    renderCourse(drinks, "courseContentDrinks");
 }
 
-function renderCourse(){
-    let courseContentRef = document.getElementById("courseContent");
+function renderCourse(array, id){
+    let courseContentRef = document.getElementById(id);
     courseContentRef.innerHTML = "";
 
-    for (let indexCourse = 0; indexCourse < assortment.length; indexCourse++) {
-        courseContentRef.innerHTML += getCourseTemplate(indexCourse);
+    for (let indexCourse = 0; indexCourse < array.length; indexCourse++) {
+        courseContentRef.innerHTML += getCourseTemplate(indexCourse, array);
     }
 }
 
-function renderCourseInBusked(){
+function renderCourseInBusked(array){
     let buskedCourseContentRef = document.getElementById("busketCourseContent");
     buskedCourseContentRef.innerHTML = "";
    
-    
-    for (let buskedIndex = 0; buskedIndex < assortment.length; buskedIndex++) {
-        if(assortment[buskedIndex].busked > 0){
-        buskedCourseContentRef.innerHTML += getBuskedCourseTemplate(buskedIndex);
+    for (let buskedIndex = 0; buskedIndex < array.length; buskedIndex++) {
+        if(array[buskedIndex].busked > 0){
+        buskedCourseContentRef.innerHTML += getBuskedCourseTemplate(buskedIndex, array);
         }
     }
     calcResult();
 }
 
-function changeBuskedAmount(indexCourse, amount){
-
-    assortment[indexCourse].busked = assortment[indexCourse].busked + amount;
-    renderCourseInBusked(indexCourse);
+function changeBuskedAmount(indexCourse, amount, array){
+    array[indexCourse].busked = array[indexCourse].busked + amount;
+    renderCourseInBusked(array);
 }
 
 function deleteCouse(indexCourse){
     assortment[indexCourse].busked = 0;
-    renderCourseInBusked(indexCourse);
+    renderCourseInBusked();
 }
 
 function calcResult(){
         let result = 0;
         let calcResultContent = document.getElementById("calcResultContent");
         calcResultContent.innerHTML = "";
+
     for (let indexCalcResul = 0; indexCalcResul < assortment.length; indexCalcResul++) {
         result += assortment[indexCalcResul].price * assortment[indexCalcResul].busked;
 
         if(result != 0){
         calcResultContent.innerHTML = getCalcResultTemplate(result);
-        renderBuskedButtonAmount(result);
         }
+        renderBuskedButtonAmount(result);
     }
 }
 
 function renderBuskedButtonAmount(result){
     let buskedAmountRef = document.getElementById("buskedAmount");
     buskedAmountRef.innerHTML = "";
+    
+    if(result != 0){
     buskedAmountRef.innerHTML = `(${(result + 5).toFixed(2).replace(".", ",")}€)`
+    }
+    else{
+        buskedAmountRef.innerHTML = ""; 
+    }
 }
 
 function closeWindow(){

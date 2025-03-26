@@ -1,25 +1,25 @@
-function getCourseTemplate(indexCourse){
+function getCourseTemplate(indexCourse, array){
     return `
-        <div onclick="changeBuskedAmount(${indexCourse}, ${+1})" class="main-course">
+        <div class="main-course">
             <div>
-                <h3>${assortment[indexCourse].name}</h3>
-                <p>${assortment[indexCourse].description}</p>
-                <p class="color-orange">${assortment[indexCourse].price.toFixed(2).replace(".", ",")}€</p>
+                <h3>${array[indexCourse].name}</h3>
+                <p>${array[indexCourse].description}</p>
+                <p class="color-orange">${array[indexCourse].price.toFixed(2).replace(".", ",")}€</p>
             </div>
-            <p class="color-orange add-button">+</p>
+            <p onclick="changeBuskedAmount(${indexCourse}, ${+1}, ${array})" class="color-orange add-button">+</p>
         </div>
     `
 }
 
-function getBuskedCourseTemplate(buskedIndex){
+function getBuskedCourseTemplate(buskedIndex, array){
     return `
         <div id="courseContent${buskedIndex}">
-            <h3>${assortment[buskedIndex].name}</h3>
+            <h3>${array[buskedIndex].name}</h3>
             <div class="busked-course-container">
-                <span onclick="changeBuskedAmount(${buskedIndex}, ${-1})" class="bold-orange-hover">-</span>
-                <span id="busketCourseAmountContent">${assortment[buskedIndex].busked}x</span>
-                <span onclick="changeBuskedAmount(${buskedIndex}, ${+1})" class="bold-orange-hover">+</span>
-                <span id="busketCoursePriceContent">${(assortment[buskedIndex].price * assortment[buskedIndex].busked).toFixed(2).replace(".", ",")}€</span>
+                <span onclick="changeBuskedAmount(${buskedIndex}, ${-1}, ${array})" class="bold-orange-hover">-</span>
+                <span id="busketCourseAmountContent">${array[buskedIndex].busked}x</span>
+                <span onclick="changeBuskedAmount(${buskedIndex}, ${+1}, ${array})" class="bold-orange-hover">+</span>
+                <span id="busketCoursePriceContent">${(array[buskedIndex].price * array[buskedIndex].busked).toFixed(2).replace(".", ",")}€</span>
                 <div onclick="deleteCouse(${buskedIndex})" class="trash-image-container"><img src="./assets/icons/trash.png" alt="Mülleimer"></div>
             </div>
         </div>

@@ -17,33 +17,42 @@
     <script src="./scripts/templates.js"></script>
 </head>
 <body onload="init()">
-    <header class="p-l-r-60">
+    <header class="p-l-r-16">
         <img class="main-logo" src="./assets/img/Bestell App- Logo.svg" alt="Bestell App logo">
         <img class="burger-menu-logo" src="./assets/img/burger-menu.png" alt="burger-menu">
     </header>
-    
     <section class="content-total">
         <div id="contentRestaurant" class="content-restaurant">
             <img class="main-image" src="./assets/img/hero.jpg" alt="Pizza">
             <div class="d-flex-j-center"><img class="abolute-image" src="./assets/img/pizza-shop.png" alt="pizza shop"></div>
-            <h1 class="p-l-r-60 p-t-b-32">Pizza Lieferdienst</h1>
-            <p class="p-l-r-60 color-orange">Bewertung (4,2 von 5 Sternen)</p>
-            <div class="navigation p-l-r-60">
+            <h1 class="p-l-r-16 p-t-b-32">Pizza Lieferdienst</h1>
+            <p class="p-l-r-16 color-orange">Bewertung (4,2 von 5 Sternen)</p>
+            <div class="navigation p-l-r-16">
                 <img src="./assets/icons/arrow-right (2).png" alt="Pfeil rechts">
                 <span>Hauptgerichte</span>
                 <span>Beilage</span>
             </div>
             <img class="second-image" src="./assets/img/pizza-2nd-image.jpg" alt="Pizza">
-            <h2 class="p-l-r-60">Hauptgerichte</h2>
+            <h2 class="p-l-r-16">Hauptgerichte</h2>
             <div id="courseContent">
+            </div>
+            <img class="second-image" src="./assets/img/potato.jpg" alt="Kartoffel">
+            <h2 class="p-l-r-16">Beilage</h2>
+            <div id="courseContentSideDish">
+            </div>
+            <img class="second-image" src="./assets/img/drinks.jpg" alt="Getränke">
+            <h2 class="p-l-r-16">Getränke</h2>
+            <div id="courseContentDrinks">
             </div>
         </div>
         <div id="busketStickyRail" class="busket-stickyrail d_none_responsive sticky-top">
             <div class="sticky-top">
                 <button onclick="toggleResponsiveBusked()" id="buttonTop" class="open-busket-button d_none_responsive d_none">Warenkorb schließen</button>
                 <h2>Warenkorb</h2>
-                <div id="busketCourseContent"></div>
-                <div id="calcResultContent"></div>
+                <div class="buscked-warapper">
+                    <div id="busketCourseContent"></div>
+                    <div id="calcResultContent"></div>
+                </div>
             </div>
         </div>
         <div onclick="closeWindow()" id="overlay" class="overlay-style d_none_allways">
@@ -68,6 +77,11 @@
         </div> 
         </section>
         <button onclick="toggleResponsiveBusked()" id="buttonBottum" class="open-busket-button sticky-bottum d_none">Warenkorb öffnen<span id="buskedAmount"></span></button>
-        <footer></footer> 
+        <footer class="p-l-r-16">
+            <a href="./kein_internet.html">Impressum</a>
+            <a href="./kein_internet.html">AGB</a>
+            <a href="./kein_internet.html">Datenschutz</a>
+            <a href="./kein_internet.html">Wiederraufsrecht</a>
+        </footer> 
 </body>
 </html>

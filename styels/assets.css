@@ -58,10 +58,11 @@ header{
 }
 
 .second-image{
-    width: 100%;
+    width: calc(100% - 16px);
     height: 150px;
     object-fit: cover;
     object-position: center;
+    margin: 8px;
 }
 
 .main-course{
@@ -93,7 +94,7 @@ header{
     padding-bottom: 8px;
 }
 
-.main-course:hover{
+.add-button:hover{
     background-color: rgb(254,229,203);
     cursor: pointer;
 }
@@ -164,6 +165,20 @@ footer{
     height: 80px;
     background-color: rgb(255,128,0);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+    align-items: center;   
 }
+
+ footer a{
+    color: white;
+ }
+
+ footer a:hover{
+    color: black;
+    text-decoration: underline;
+ }
+
+ .buscked-warapper{
+    min-height: calc(100vh - 307px);
+    padding-bottom: 16px;
+ }
