@@ -1,14 +1,28 @@
 function init(){
-    renderCourse(assortment, "courseContent");
-    renderCourse(sideDish, "courseContentSideDish");
-    renderCourse(drinks, "courseContentDrinks");
+    renderCourse(`assortment`, "courseContent");
+    renderCourse('sideDish', "courseContentSideDish");
+    renderCourse('dirnksRef', "courseContentDrinks");
+}
+
+function arrayVar(array){
+    
+
+    if(array == `assortment`){
+        arrayRef = assortment;
+    }else if(array == `sideDish`){
+        arrayRef = sideDish;
+    }else if(array == 'dirnksRef'){
+        arrayRef = drinks;
+    }
+
+    return arrayRef
 }
 
 function renderCourse(array, id){
     let courseContentRef = document.getElementById(id);
     courseContentRef.innerHTML = "";
 
-    for (let indexCourse = 0; indexCourse < array.length; indexCourse++) {
+    for (let indexCourse = 0; indexCourse < arrayVar(array).length; indexCourse++) {
         courseContentRef.innerHTML += getCourseTemplate(indexCourse, array);
     }
 }
@@ -17,8 +31,8 @@ function renderCourseInBusked(array){
     let buskedCourseContentRef = document.getElementById("busketCourseContent");
     buskedCourseContentRef.innerHTML = "";
    
-    for (let buskedIndex = 0; buskedIndex < array.length; buskedIndex++) {
-        if(array[buskedIndex].busked > 0){
+    for (let buskedIndex = 0; buskedIndex < arrayVar(array).length; buskedIndex++) {
+        if(arrayVar(array)[buskedIndex].busked > 0){
         buskedCourseContentRef.innerHTML += getBuskedCourseTemplate(buskedIndex, array);
         }
     }
@@ -26,7 +40,14 @@ function renderCourseInBusked(array){
 }
 
 function changeBuskedAmount(indexCourse, amount, array){
-    array[indexCourse].busked = array[indexCourse].busked + amount;
+    arrayVar(array)[indexCourse].busked = arrayVar(array)[indexCourse].busked + amount;
+    if(array == `assortment`){
+          assortment = arrayVar(array);
+    }else if(array == `sideDish`){
+         sideDish = arrayVar(array);
+    }else if(array == 'dirnksRef'){
+         drinks = arrayVar(array);
+    }
     renderCourseInBusked(array);
 }
 
@@ -38,9 +59,11 @@ function deleteCouse(indexCourse){
 function calcResult(){
         let result = 0;
         let calcResultContent = document.getElementById("calcResultContent");
+        let checkBoxRef = document.getElementById("checkbox")
+        console.log(checkBoxRef.value)
         calcResultContent.innerHTML = "";
-
-    for (let indexCalcResul = 0; indexCalcResul < assortment.length; indexCalcResul++) {
+        
+        for (let indexCalcResul = 0; indexCalcResul < assortment.length; indexCalcResul++) {
         result += assortment[indexCalcResul].price * assortment[indexCalcResul].busked;
 
         if(result != 0){

@@ -91,6 +91,8 @@ let drinks =[
     }
 ]
 
+let arrayRef = [];
+
 let ratingArray = {
     "stars" : 0,
     "raitings" : 0

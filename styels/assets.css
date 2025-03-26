@@ -162,7 +162,7 @@ h2{
 
 footer{
     width: 100%;
-    height: 80px;
+    min-height: 80px;
     background-color: rgb(255,128,0);
     display: flex;
     justify-content: space-around;
@@ -182,3 +182,24 @@ footer{
     min-height: calc(100vh - 307px);
     padding-bottom: 16px;
  }
+
+.checkbox-warapper{
+    padding: 16px;
+}
+
+#checkbox{
+    margin-left: 16px;
+}
+
+@media(max-width: 440px){
+    footer{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .main-course{
+        height: 150px;
+    }
+}
